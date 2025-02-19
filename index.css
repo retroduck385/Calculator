@@ -1,8 +1,14 @@
+/* PRO TIP: Class can be reused accross multiple elements, while id must be unique in a document. */
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;   /*Usually for vertical alignment */
+    height: 100vh; /* This is added so that the body is the whole page not just how big everything is so that center align is better */
+}
+
 .calculator-modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 450px;
     height: 500px;
     padding: 20px;
@@ -26,6 +32,15 @@
     z-index: 999;
 }
 
+.display{
+    width: 100%;
+    height: 70%;
+    border-radius: 10px;
+    font-size:5rem;
+    text-align: right;
+
+}
+
 .keys{
     grid-area: keys;
     display: grid; 
@@ -35,8 +50,8 @@
 }
 
 .numerical-button{
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border-radius: 50px;;
     border: none;
     background-color: rgb(68, 67, 67);
@@ -48,13 +63,29 @@
 
 
 .operation-button{
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     border-radius: 50px;;
     border: none;
-    background-color: orange;
+    background-color: hsl(39, 100%, 50%);
     color: white;
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.numerical-button:hover{
+    background-color: hsl(0, 0%, 40%);
+}
+
+.numerical-button:active{
+    background-color: hsl(0, 0%, 50%);
+}
+
+.operation-button:hover{
+    background-color: hsl(39, 100%, 60%);
+}
+
+.operation-button:active{
+    background-color: hsl(39, 100%, 70%);
 }
